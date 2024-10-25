@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <title>Intuit QuickBooks</title>
+    <style>
+      @font-face {
+        font-family: AvenirNextforINTUIT-Bold;
+        src: url("https://static.cns-icn-prod.a.intuit.com/fonts/AvenirNext-forINTUIT-Web-Fonts/AvenirNext+forINTUIT+W05+Bold_web.woff2")
+            format("woff2"),
+          local("Helvetica Neue Bold"), local("Arial");
+      }
+      @font-face {
+        font-family: AvenirNextforINTUIT-Demi;
+        src: url("https://static.cns-icn-prod.a.intuit.com/fonts/AvenirNext-forINTUIT-Web-Fonts/AvenirNext+forINTUIT+W05+Demi_web.woff2")
+            format("woff2"),
+          local("Helvetica Neue"), local("Arial");
+      }
+      @font-face {
+        font-family: AvenirNextforINTUIT-Medium;
+        src: url("https://static.cns-icn-prod.a.intuit.com/fonts/AvenirNext-forINTUIT-Web-Fonts/AvenirNext+forINTUIT+W05+Mediu_web.woff2")
+            format("woff2"),
+          local("Helvetica Neue"), local("Arial");
+      }
+      @font-face {
+        font-family: AvenirNextforINTUIT-Regular;
+        src: url("https://static.cns-icn-prod.a.intuit.com/fonts/AvenirNext-forINTUIT-Web-Fonts/AvenirNext+forINTUIT+W05+Rg_web.woff2")
+            format("woff2"),
+          local("Helvetica Neue"), local("Arial");
+      }
+      * {
+        font-family: AvenirNextforINTUIT-Regular, "Helvetica Neue", Arial,
+          sans-serif;
+      }
+    </style>
+    <style>
+      .methods:hover {
+        cursor: not-allowed;
+      }
+      .pointer:hover {
+        cursor: pointer;
+      }
+      .paypal:hover {
+        background-color: #00a3001b;
+      }
+      .darken:hover {
+        background-color: rgba(0, 0, 0, 0.053);
+      }
+    </style>
+  </head>
+  <body style="background-color: rgb(244, 245, 248); padding: 16px">
+    <svg
+      width="170"
+      height="35"
+      viewBox="0 0 126 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill="#2CA01C"
+        d="M14.4459 28.8c7.9781 0 14.4458-6.4471 14.4458-14.4 0-7.95292-6.4677-14.4-14.4458-14.4C6.46762 0 0 6.44708 0 14.4c0 7.9529 6.46762 14.4 14.4459 14.4Z"
+      ></path>
+      <path
+        fill="#fff"
+        d="M9.63076 8.7998c-3.10425 0-5.61782 2.5088-5.61782 5.6 0 3.0944 2.51357 5.6 5.61782 5.6h.80254v-2.08h-.80254c-1.94859 0-3.53119-1.5776-3.53119-3.52 0-1.9424 1.5826-3.52 3.53119-3.52h1.92934v10.88c0 1.1488.9341 2.08 2.0866 2.08v-15.04H9.63076ZM19.2642 20c3.1043 0 5.6178-2.5089 5.6178-5.6 0-3.0944-2.5135-5.60004-5.6178-5.60004h-.8025v2.07994h.8025c1.9486 0 3.5312 1.5777 3.5312 3.5201 0 1.9424-1.5826 3.5199-3.5312 3.5199h-1.9293V7.03998c0-1.14882-.9341-2.08002-2.0866-2.08002V20h4.0159Z"
+      ></path>
+      <path
+        fill="#000"
+        d="M42.5628 31.9999h-2.2193v-5.6153h-.0383c-.5739.8855-1.7028 1.4397-2.9399 1.4397-2.7008 0-4.3653-2.1435-4.3653-4.7298 0-2.6245 1.7761-4.6565 4.3079-4.6565 1.6262 0 2.6274.7931 3.0707 1.497h.0541v-1.239h2.1268v13.3039h.0033Zm-4.7511-6.0229c1.6262 0 2.6083-1.4588 2.6083-2.8442 0-1.3855-.9789-2.8825-2.6083-2.8825-1.7187 0-2.551 1.4587-2.551 2.8442-.0031 1.3855.8291 2.8825 2.551 2.8825ZM52.5301 27.5664h-2.1076v-1.4237h-.0383c-.389.8854-1.4412 1.6817-2.755 1.6817-2.3117 0-3.2747-1.7741-3.2747-3.5832v-5.542h2.2193v4.9145c0 1.0543.2391 2.3633 1.6645 2.3633 1.4061 0 2.0726-1.2198 2.0726-2.4015v-4.8763h2.2192v8.8672ZM54.7561 18.5049h2.2193v8.8671h-2.2193v-8.8671ZM65.2787 21.1551c-.3508-.5001-1.1097-.8695-1.8305-.8695-1.6262 0-2.4425 1.4587-2.4425 2.8442 0 1.3855.8324 2.8443 2.5159 2.8443.6855 0 1.4412-.2771 1.8686-.7931l1.387 1.4046c-.7402.7931-1.9614 1.239-3.2749 1.239-2.6274 0-4.8087-1.7359-4.8087-4.6916 0-2.8825 2.1464-4.6916 4.7546-4.6916 1.2947 0 2.6435.516 3.3477 1.3855l-1.5172 1.3282ZM67.887 13.6001h2.2193v8.8289h.0542l3.367-3.7328h2.8474l-3.8455 4.0099 4.0879 4.8572h-2.9396l-3.514-4.5451h-.0542v4.5451h-2.2193V13.6001h-.0032ZM79.8507 13.6001v6.2267h.0542c.4623-.5733 1.3489-1.3855 2.9782-1.3855 2.5347 0 4.3078 2.0321 4.3078 4.6566 0 2.5863-1.6647 4.7298-4.3652 4.7298-1.2405 0-2.4429-.5733-3.0517-1.5894h-.0381v1.3314h-2.1077V13.6001h2.2225Zm2.5347 6.6504c-1.6261 0-2.6082 1.4969-2.6082 2.8824 0 1.3855.9788 2.8442 2.6082 2.8442 1.719 0 2.5508-1.4969 2.5508-2.8824 0-1.3855-.8318-2.8442-2.5508-2.8442ZM92.9816 18.4414c2.6816 0 4.828 1.8665 4.828 4.6566s-2.1464 4.7298-4.828 4.7298c-2.6817 0-4.8275-1.9397-4.8275-4.7298s2.1458-4.6566 4.8275-4.6566Zm0 7.5358c1.757 0 2.57-1.497 2.57-2.8824 0-1.3855-.813-2.8443-2.57-2.8443-1.7571 0-2.5701 1.4588-2.5701 2.8443 0 1.3854.813 2.8824 2.5701 2.8824ZM103.599 18.4414c2.682 0 4.828 1.8665 4.828 4.6566s-2.146 4.7298-4.828 4.7298c-2.681 0-4.8273-1.9397-4.8273-4.7298s2.1463-4.6566 4.8273-4.6566Zm0 7.5358c1.757 0 2.57-1.497 2.57-2.8824 0-1.3855-.813-2.8443-2.57-2.8443s-2.57 1.4588-2.57 2.8443c-.003 1.3854.813 2.8824 2.57 2.8824ZM109.776 13.6001h2.219v8.8289h.054l3.368-3.7328h2.847l-3.845 4.0099 4.088 4.8572h-2.94l-3.514-4.5451h-.055v4.5451h-2.219V13.6001h-.003ZM124.562 21.0624c-.389-.5159-1.129-.9618-1.942-.9618-.701 0-1.425.258-1.425.9618 0 .6849.686.8696 1.922 1.1626 1.314.3153 2.867.9045 2.867 2.6404 0 2.1627-1.757 2.9557-3.698 2.9557-1.369 0-2.794-.516-3.645-1.4587l1.46-1.3664c.482.6274 1.314 1.1084 2.274 1.1084.647 0 1.425-.258 1.425-1.0542 0-.739-.686-.9619-2.034-1.2741-1.314-.3153-2.628-.8504-2.628-2.513 0-1.9779 1.776-2.8251 3.533-2.8251 1.276 0 2.608.4427 3.329 1.3473l-1.438 1.2771ZM56.4127 6.6176c0 2.1853 1.758 3.7825 3.9922 3.7825s3.9952-1.59408 3.9952-3.7825V1.6001h-2.1656v4.76062c0 1.17928-.7934 1.96861-1.8359 1.96861-1.0457 0-1.8359-.78933-1.8359-1.96861V1.6001h-2.1626l.0126 5.0175ZM70.8 3.65563h2.539v6.74447h2.1257V3.65563H78V1.6001h-7.2v2.05553ZM69.2 1.6001h-2.4v8.8h2.4v-8.8ZM47.6001 3.65563h2.5386v6.74447h2.1258V3.65563h2.5356V1.6001h-7.2v2.05553ZM36.4 1.6001H34v8.8h2.4v-8.8ZM45.9938 5.38257c0-2.18529-1.7619-3.78247-3.9969-3.78247C39.7619 1.6001 38 3.19419 38 5.38257v5.01753h2.1634V5.6395c0-1.17933.7938-1.96864 1.8366-1.96864 1.0428 0 1.8366.78931 1.8366 1.96864v4.7606H46l-.0062-5.01753Z"
+      ></path>
+    </svg>
+
+    <div
+      style="
+        word-break: break-word;
+        max-width: 1040px;
+        width: 100%;
+        margin: 20px auto;
+        padding: 0 20px;
+        display: flex;
+      "
+    >
+      <div
+        style="width: 65%; left: 0px; padding: 15px 0; word-break: break-word"
+      >
+        <div
+          style="
+            padding: 32px 66px 32px;
+            max-width: 882px;
+            background-color: white;
+          "
+        >
+          <div>
+            <p
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #8c9097;
+                margin: 4px 0px;
+              "
+            >
+              PAYMENT AMOUNT
+            </p>
+            <p
+              style="
+                font-size: 28px;
+                font-weight: bold;
+                margin: 0px;
+                color: #505050;
+              "
+            >
+              $6,616.96
+              <span
+                class="pointer"
+                style="
+                  text-decoration: underline;
+                  font-size: 12px;
+                  color: #8c9097;
+                  font-weight: lighter;
+                "
+                >Edit amount</span
+              >
+            </p>
+            <ul
+              style="
+                list-style: none;
+                width: 100%;
+                padding: 6px 0px;
+                margin: 14px 0px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 8px;
+                display: flex;
+                justify-content: center;
+              "
+            >
+              <li style="list-style: none">
+                <div
+                  class="pointer paypal"
+                  style="
+                    position: relative;
+                    display: flex;
+                    border-radius: 4px;
+                    min-height: 50px;
+                    min-width: 128px;
+                    border: 1px solid rgb(236, 238, 241);
+                    margin: 8px 0px;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      top: 0px;
+                      height: 4px;
+                      background-color: #00a300;
+                      width: 100%;
+                      border-top-left-radius: 4px;
+                      border-top-right-radius: 4px;
+                    "
+                  ></div>
+                  <svg
+                    width="40"
+                    height="24"
+                    viewBox="0 0 22 23"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.52344 9.0752V17.545H2.31095C2.00121 17.5428 1.70299 17.6602 1.48257 17.8701C1.26287 18.0815 1.13898 18.3672 1.13898 18.6668V21.5168H20.8421V18.6668C20.8421 18.3687 20.7196 18.0837 20.5014 17.873C20.2831 17.6631 19.987 17.545 19.678 17.545H19.4684V9.07592H2.52344V9.0752Z"
+                      fill="white"
+                      stroke="#008481"
+                      stroke-width="1.645"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M1.13791 9.06999C0.882913 9.07728 0.653128 8.92348 0.571011 8.69023C0.488894 8.45698 0.573893 8.19968 0.780626 8.05609L10.6462 0.679602C10.7471 0.602338 10.8717 0.560791 11.0006 0.560791C11.1303 0.560791 11.2556 0.603067 11.3579 0.679602L21.212 8.06484C21.4151 8.21062 21.4972 8.46646 21.4158 8.69752C21.3344 8.92931 21.1082 9.08311 20.8547 9.07947L1.13935 9.06926L1.13791 9.06999Z"
+                      fill="white"
+                    ></path>
+                    <path
+                      d="M11 1.12105L20.8541 8.50628H1.13874L10.9892 1.12105H10.9993H11ZM10.9899 0C10.732 0 10.4814 0.0830948 10.2775 0.236164L0.434259 7.63087C0.0532059 7.92681 -0.0951813 8.421 0.0618498 8.86782C0.219601 9.31464 0.649636 9.61859 1.13802 9.62952H20.8411C21.3338 9.62733 21.7718 9.3263 21.9346 8.87729C22.0974 8.42829 21.9497 7.92972 21.5665 7.63087L11.7146 0.236164C11.5107 0.0830948 11.2586 0 11 0H10.9899Z"
+                      fill="#008481"
+                    ></path>
+                    <g>
+                      <path
+                        d="M4.54016 7.3858L11 2.54443L17.4599 7.3858H4.54016Z"
+                        fill="#D9F6F6"
+                      ></path>
+                    </g>
+                    <path
+                      d="M16.5345 9.85645V17.5456M5.47174 9.85645V17.5456V9.85645ZM9.5279 9.85645V17.5456V9.85645ZM12.4755 9.85645V17.5456V9.85645Z"
+                      stroke="#00C1BF"
+                      stroke-width="0.822"
+                    ></path>
+                    <path
+                      d="M4.33588 17.5439H17.7887M4.33588 19.3341H17.7887H4.33588Z"
+                      stroke="#00C1BF"
+                      stroke-width="0.822"
+                      stroke-linecap="round"
+                    ></path>
+                    <path
+                      d="M8.4675 7.47135C8.2903 7.47062 8.12174 7.39118 8.01225 7.25706C7.90276 7.12221 7.86242 6.94582 7.90276 6.7789C8.24852 5.36774 9.55303 4.37061 11.0556 4.37061C12.5575 4.37061 13.8627 5.36774 14.2078 6.7789C14.2488 6.94654 14.2078 7.12294 14.0976 7.25779C13.9874 7.39263 13.8188 7.47135 13.6402 7.47135H8.46822H8.4675Z"
+                      fill="#57B520"
+                    ></path>
+                    <g>
+                      <path
+                        d="M19.4812 18.6654H18.3172V10.1948L7.7536 20.3943H19.6916V18.8724C19.693 18.8177 19.6714 18.7645 19.6318 18.7259C19.5922 18.6865 19.5381 18.6647 19.4805 18.6647L19.4812 18.6654Z"
+                        fill="#D9F6F6"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    margin: 0px;
+                    font-size: 12px;
+                    color: #414346;
+                  "
+                >
+                  Bank
+                </p>
+              </li>
+              <li class="methods" style="list-style: none">
+                <div
+                  style="
+                    display: flex;
+                    border-radius: 4px;
+                    min-height: 50px;
+                    min-width: 128px;
+                    border: 1px solid rgb(236, 238, 241);
+                    margin: 8px 0px;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <svg
+                    width="40"
+                    height="24"
+                    viewBox="0 0 37 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.15131 24.8948C1.68233 24.9213 1.28019 24.5676 1.25 24.1028V1.97023C1.28019 1.50435 1.68125 1.1507 2.15131 1.17718H34.508C34.9759 1.1507 35.3791 1.50541 35.4082 1.96918V23.9927C35.3759 24.5348 34.908 24.9478 34.3625 24.916L2.15131 24.8948Z"
+                      fill="white"
+                      stroke="#008481"
+                      stroke-width="1.556"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <g>
+                      <path
+                        d="M33.9141 2.87109V23.2005H13.4189L33.9141 2.87109Z"
+                        fill="#D9F6F6"
+                      ></path>
+                    </g>
+                    <path
+                      d="M5.51953 5.37012H31.1379V9.14376H5.51953V5.37012Z"
+                      fill="#00C1BF"
+                    ></path>
+                    <path
+                      d="M12.2448 17.5086C12.2448 18.7623 11.2206 19.7788 9.95593 19.7788L8.17595 19.694C7.33393 19.73 6.53936 19.3055 6.10811 18.5876C5.67686 17.8697 5.67686 16.975 6.10811 16.2571C6.53936 15.5392 7.33393 15.1136 8.17595 15.1496"
+                      stroke="#53B700"
+                      stroke-width="0.792"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                    ></path>
+                    <path
+                      d="M9.86621 17.4238C9.86514 16.8213 10.1056 16.2432 10.5347 15.8165C10.9648 15.3898 11.5481 15.1494 12.1551 15.1494L13.9394 15.2384C15.204 15.2384 16.2282 16.2548 16.2282 17.5085C16.2282 18.7621 15.204 19.7786 13.9394 19.7786"
+                      stroke="#53B700"
+                      stroke-width="0.792"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                    ></path>
+                    <path
+                      d="M35.4082 32.4422C40.1247 32.4422 43.9481 28.6497 43.9481 23.9716C43.9481 19.2934 40.1247 15.501 35.4082 15.501C30.6918 15.501 26.8684 19.2934 26.8684 23.9716C26.8684 28.6497 30.6918 32.4422 35.4082 32.4422Z"
+                      fill="#53B700"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M40.1304 21.6336V20.4996C40.1304 20.398 40.07 20.3059 39.9773 20.2625L35.515 18.3142C35.447 18.2846 35.3694 18.2846 35.3015 18.3142L30.8445 20.2625C30.7475 20.3038 30.686 20.3969 30.686 20.4996V21.6347C30.686 21.7776 30.8025 21.8931 30.9469 21.8931H39.8738C40.0172 21.8909 40.1304 21.7766 40.1304 21.6347V21.6336Z"
+                      stroke="white"
+                      stroke-width="1.188"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M36.715 22.0234V25.6107M34.106 22.0234V25.6107V22.0234Z"
+                      stroke="white"
+                      stroke-width="0.792"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M31.7361 22.0234V27.7284M39.0846 22.0234V27.7284V22.0234Z"
+                      stroke="white"
+                      stroke-width="1.188"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M31.1853 27.7285H39.6313"
+                      stroke="white"
+                      stroke-width="1.584"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    margin: 0px;
+                    font-size: 12px;
+                    color: #414346;
+                  "
+                >
+                  Debit
+                </p>
+              </li>
+              <li class="methods" style="list-style: none">
+                <div
+                  style="
+                    display: flex;
+                    border-radius: 4px;
+                    min-height: 50px;
+                    min-width: 128px;
+                    border: 1px solid rgb(236, 238, 241);
+                    margin: 8px 0px;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <svg
+                    width="40"
+                    height="24"
+                    viewBox="0 0 36 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.844 23.9779C1.40488 24.0036 1.02787 23.6609 1 23.2106V1.76861C1.02787 1.31836 1.40488 0.975637 1.844 1.00136H32.156C32.5951 0.975637 32.9721 1.31836 33 1.76861V23.1039C32.9699 23.6284 32.5313 24.0287 32.02 23.9984L1.844 23.9779Z"
+                      fill="#FAFBFF"
+                      stroke="#008481"
+                      stroke-width="1.55259"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <g opacity="0.15">
+                      <path d="M31 3V22H12L31 3Z" fill="#00C1BF"></path>
+                    </g>
+                    <rect
+                      x="5"
+                      y="5"
+                      width="24"
+                      height="4"
+                      fill="#53B700"
+                    ></rect>
+                    <path
+                      d="M11 16.0393C11 17.1222 10.0485 18 8.87466 18L7.22117 17.9268C6.43924 17.958 5.70182 17.5909 5.30078 16.9709C4.89974 16.3508 4.89974 15.5778 5.30078 14.9578C5.70182 14.3378 6.43924 13.9707 7.22117 14.0018"
+                      stroke="#00C1BF"
+                      stroke-width="0.790123"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M9 15.9652C8.99893 15.4444 9.22586 14.9445 9.63076 14.5758C10.0356 14.2072 10.5853 14 11.1584 14L12.8416 14.0769C14.0337 14.0769 15 14.9551 15 16.0384C15 17.1218 14.0337 18 12.8416 18"
+                      stroke="#00C1BF"
+                      stroke-width="0.790123"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    margin: 0px;
+                    font-size: 12px;
+                    color: #414346;
+                  "
+                >
+                  Credit
+                </p>
+              </li>
+
+              <li class="methods" style="list-style: none">
+                <div
+                  style="
+                    position: relative;
+                    display: flex;
+                    border-radius: 4px;
+                    min-height: 50px;
+                    min-width: 128px;
+                    border: 1px solid rgb(236, 238, 241);
+                    margin: 8px 0px;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <svg
+                    width="40"
+                    height="24"
+                    viewBox="0 0 40 24"
+                    fill="none"
+                    style="width: 29px; margin-top: -7px"
+                  >
+                    <g clip-path="url(#clip0_562_63361)">
+                      <path
+                        d="M11.1065 28.4291L11.57 25.4935L10.5375 25.4697H5.60742L9.03359 3.80811C9.04422 3.74272 9.07878 3.68175 9.1293 3.63845C9.17982 3.59515 9.24451 3.57129 9.31186 3.57129H17.6247C20.3844 3.57129 22.2889 4.14391 23.2833 5.27413C23.7494 5.80434 24.0463 6.3584 24.1899 6.96814C24.3406 7.60792 24.3432 8.3723 24.1961 9.30458L24.1855 9.37262V9.96998L24.6516 10.2333C25.0442 10.441 25.3562 10.6787 25.5955 10.9509C25.9943 11.4042 26.2521 11.9803 26.3612 12.6634C26.4737 13.3659 26.4365 14.2019 26.2522 15.1483C26.0395 16.237 25.6956 17.1852 25.2312 17.9611C24.8041 18.676 24.2599 19.2689 23.6138 19.7284C22.997 20.1649 22.2641 20.4963 21.4355 20.7084C20.6326 20.917 19.7171 21.0221 18.713 21.0221H18.066C17.6034 21.0221 17.1541 21.1882 16.8014 21.486C16.4478 21.79 16.2138 22.2054 16.142 22.6596L16.0933 22.9238L15.2744 28.0977L15.2372 28.2877C15.2274 28.3478 15.2106 28.3778 15.1858 28.3981C15.1636 28.4167 15.1317 28.4291 15.1007 28.4291H11.1065Z"
+                        fill="#253B80"
+                      ></path>
+                      <path
+                        d="M25.0939 9.44141C25.0691 9.59958 25.0407 9.7613 25.0088 9.92743C23.9125 15.5396 20.162 17.4784 15.3719 17.4784H12.933C12.3472 17.4784 11.8536 17.9026 11.7623 18.4788L10.5136 26.3753L10.16 28.6136C10.1006 28.9918 10.3931 29.3329 10.776 29.3329H15.1016C15.6139 29.3329 16.049 28.9618 16.1297 28.4581L16.1722 28.2389L16.9867 23.0854L17.0389 22.8026C17.1187 22.2971 17.5547 21.926 18.067 21.926H18.7139C22.9049 21.926 26.1857 20.2293 27.1446 15.3196C27.5452 13.2686 27.3378 11.556 26.2779 10.3516C25.9571 9.9884 25.5592 9.68707 25.0939 9.44141Z"
+                        fill="#179BD7"
+                      ></path>
+                      <path
+                        d="M23.9465 8.98561C23.779 8.93701 23.6062 8.89283 23.4289 8.85306C23.2508 8.81418 23.0682 8.77972 22.8804 8.74967C22.2228 8.64363 21.5023 8.59326 20.7304 8.59326H14.2148C14.0544 8.59326 13.902 8.62949 13.7655 8.69488C13.4651 8.83892 13.2417 9.12258 13.1877 9.46987L11.8016 18.2236L11.7617 18.4789C11.853 17.9028 12.3466 17.4786 12.9324 17.4786H15.3713C20.1614 17.4786 23.9119 15.539 25.0082 9.92761C25.041 9.76148 25.0685 9.59977 25.0933 9.44159C24.8159 9.2949 24.5155 9.16942 24.192 9.06249C24.1122 9.03598 24.0298 9.01036 23.9465 8.98561Z"
+                        fill="#222D65"
+                      ></path>
+                      <path
+                        d="M13.1872 9.46992C13.2413 9.12264 13.4646 8.83898 13.765 8.69582C13.9024 8.63043 14.0539 8.5942 14.2143 8.5942H20.7299C21.5018 8.5942 22.2223 8.64457 22.8799 8.75061C23.0678 8.78065 23.2503 8.81512 23.4285 8.854C23.6057 8.89376 23.7785 8.93795 23.946 8.98655C24.0293 9.01129 24.1118 9.03692 24.1924 9.06255C24.5159 9.16947 24.8163 9.29584 25.0937 9.44164C25.4198 7.36766 25.091 5.95554 23.9664 4.67687C22.7266 3.26917 20.4888 2.6665 17.6254 2.6665H9.3126C8.72769 2.6665 8.22874 3.09067 8.13835 3.66771L4.67584 25.5519C4.6076 25.9849 4.9426 26.3755 5.3804 26.3755H10.5126L11.8011 18.2236L13.1872 9.46992Z"
+                        fill="#253B80"
+                      ></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_562_63361">
+                        <rect
+                          width="22.6667"
+                          height="26.6667"
+                          fill="white"
+                          transform="translate(4.66699 2.6665)"
+                        ></rect>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    margin: 0px;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: #414346;
+                  "
+                >
+                  PayPal
+                </p>
+              </li>
+            </ul>
+            <div style="margin: 32px 0px; color: rgb(89, 89, 89)">
+              <p
+                style="
+                  margin: 4px 0px;
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #525252;
+                "
+              >
+                Pay with ACH
+              </p>
+              <div style="margin: 20px 0px">
+                <p style="font-size: 12px; font-weight: 600; margin: 6px 0px">
+                  Bank name
+                </p>
+                <div
+                  style="
+                    font-size: 14px;
+                    border: 1px solid rgb(184, 184, 184);
+                    border-radius: 4px;
+                    padding: 10px;
+                  "
+                >
+                  Bank of America
+                </div>
+              </div>
+
+              <div style="margin: 20px 0px">
+                <p style="font-size: 12px; font-weight: 600; margin: 6px 0px">
+                  Routing number (Paper & Electronic)
+                </p>
+                <div
+                  style="
+                    font-size: 14px;
+                    border: 1px solid rgb(184, 184, 184);
+                    border-radius: 4px;
+                    padding: 10px;
+                  "
+                >
+                  121000358
+                </div>
+              </div>
+              
+              <div style="display: flex; width: 100%; margin: 20px 0px">
+                <div style=" width: 50%; padding-right: 10px;">
+                  <p style="font-size: 12px; font-weight: 600; margin: 6px 0px">
+                    Account number
+                  </p>
+                  <div
+                    style="
+                      font-size: 14px;
+                      border: 1px solid rgb(184, 184, 184);
+                      border-radius: 4px;
+                      padding: 10px;
+                    "
+                  >
+                    325199453560
+                  </div>
+                </div>
+                <div style=" width: 50%; padding-left: 10px;">
+                  <p style="font-size: 12px; font-weight: 600; margin: 6px 0px">
+                    Account holder's name
+                  </p>
+                  <div
+                    style="
+                      font-size: 14px;
+                      border: 1px solid rgb(184, 184, 184);
+                      border-radius: 4px;
+                      padding: 10px;
+                    "
+                  >
+                  Ly Dieu Phung
+                  </div>
+                </div>
+              </div>
+              <div style="margin-top: 32px;">
+                <p class="pointer" style="color: #0079cb; font-size: 13px;">Sign in or create account</p>
+                <p style="font-size: 13px;">Please note that this payment is for the keynote presentations by Brett Hoogeveen, CSP, at the Arizona/New Mexico MGMA event on November 7-8, 2024, as well as for his total travel expenses. Please remit payment at your earliest convenience.
+                  Thank you for your business - we appreciate it very much. </p>
+                <p style="font-size: 13px;"> You also provide written instructions for Intuit Inc. to obtain and periodically refresh information from bank verification data providers to validate your bank account information and for other fraud detection purposes.</p>
+              </div>
+            </div>
+
+            <p style="text-align: center; color: #8c9097; font-size: 12px">
+              © 2024 Intuit Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          width: 35%;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 15px;
+          right: 0px;
+        "
+      >
+        <div
+          style="padding: 16px; background-color: white; border-radius: 16px"
+        >
+          <img
+            src="/e6fad4d7-a321-453f-8f82-4b67d553b8fc_template.png"
+            alt=""
+            style="width: 100%"
+          />
+          <p style="font-weight: bold; font-size: 16px">
+            MindSet LLC (dba BetterCulture)
+          </p>
+          <div style="display: flex">
+            <p
+              style="
+                width: 50%;
+                margin: 6px 0px;
+                font-size: 13px;
+                color: #63666b;
+              "
+            >
+              Invoice
+            </p>
+            <p
+              style="
+                width: 50%;
+                text-align: right;
+                margin: 6px 0px;
+                font-size: 13px;
+                color: #414345;
+              "
+            >
+              1114
+            </p>
+          </div>
+          <div style="display: flex">
+            <p
+              style="
+                width: 50%;
+                margin: 6px 0px;
+                font-size: 13px;
+                color: #63666b;
+              "
+            >
+              Due date
+            </p>
+            <p
+              style="
+                width: 50%;
+                text-align: right;
+                margin: 6px 0px;
+                font-size: 13px;
+                color: #414345;
+              "
+            >
+              February 2, 2024
+            </p>
+          </div>
+          <div style="display: flex">
+            <p
+              style="
+                width: 50%;
+                margin: 6px 0px;
+                font-size: 13px;
+                color: #63666b;
+              "
+            >
+              Invoice amount
+            </p>
+            <p
+              style="
+                width: 50%;
+                text-align: right;
+                margin: 6px 0px;
+                font-size: 13px;
+                color: #414345;
+              "
+            >
+              $6,616.96
+            </p>
+          </div>
+          <hr style="border-color: #8c909714" />
+          <div style="display: flex">
+            <p
+              style="
+                width: 50%;
+                margin: 6px 0px;
+                font-size: 13px;
+                font-weight: bold;
+                color: #262728;
+              "
+            >
+              Total
+            </p>
+            <p
+              style="
+                width: 50%;
+                text-align: right;
+                margin: 6px 0px;
+                font-size: 13px;
+                color: #414345;
+              "
+            >
+              $6,616.96
+            </p>
+          </div>
+          <div style="display: flex; margin-top: 16px">
+            <div style="width: 50%; text-decoration: none;">
+              <a
+                href="/Invoice_1286_from_MindSet_LLC_dba_BetterCulture-1.pdf"
+                target="_blank"
+                style="text-decoration: none"
+              >
+                <div
+                  class="darken pointer"
+                  style="
+                    border: 2px solid rgba(0, 0, 0, 0.571);
+                    border-radius: 4px;
+                    height: 20px;
+                    width: 100px;
+                    font-size: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  View invoice
+                </div>
+              </a>
+            </div>
+
+            <div style="width: 50%; text-align: right">
+              <a href="/Invoice_1286_from_MindSet_LLC_dba_BetterCulture-1.pdf" target="_blank">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="pointer darken"
+                  aria-label="Download"
+                  style="margin: 0px 8px"
+                >
+                  <path
+                    fill="#393a3d"
+                    fill-rule="evenodd"
+                    aria-label="Download path"
+                    d="M20 11c.553 0 1 .448 1 1v6c0 1.654-1.346 3-3 3H6c-1.654 0-3-1.346-3-3v-6c0-.552.447-1 1-1 .553 0 1 .448 1 1v6c0 .55.448 1 1 1h12c.552 0 1-.45 1-1v-6c0-.552.447-1 1-1zm-8-8c.553 0 1 .448 1 1v9.586l2.293-2.293c.391-.391 1.023-.391 1.414 0 .391.39.391 1.023 0 1.414l-3.999 3.999c-.093.093-.203.166-.326.217-.122.051-.252.077-.382.077s-.26-.026-.382-.077c-.123-.051-.233-.124-.326-.217l-3.999-3.999c-.391-.391-.391-1.023 0-1.414s1.023-.391 1.414 0L11 13.586V4c0-.552.447-1 1-1z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="/Invoice_1286_from_MindSet_LLC_dba_BetterCulture-1.pdf" target="_blank">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="pointer darken"
+                  aria-label="Print"
+                  style="padding: 0px 0px"
+                >
+                  <g fill="none" fill-rule="evenodd">
+                    <path
+                      aria-label="Print path"
+                      stroke="#393a3d"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7.06 10V4c0-.552.448-1 1-1h8c.552 0 1 .448 1 1v6M7 19H5c-1.105 0-2-.895-2-2v-5c0-1.105.895-2 2-2h14c1.105 0 2 .895 2 2v5c0 1.105-.895 2-2 2h-2m-9.943.016c.002-1.105.898-1.999 2.003-1.997l6 .01c1.105.001 1.999.898 1.997 2.002-.002 1.105-.899 1.999-2.003 1.997l-6-.01c-1.105 0-1.999-.898-1.997-2.002z"
+                    ></path>
+                    <circle
+                      cx="7.003"
+                      cy="13.933"
+                      r="1"
+                      fill="#393a3d"
+                    ></circle>
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            padding: 16px 24px;
+            background-color: white;
+            border-radius: 16px;
+            margin-top: 18px;
+          "
+        >
+          <p
+            style="
+              margin: 4px 0px;
+              font-size: 14px;
+              font-weight: bold;
+              color: #525252;
+            "
+          >
+            Merchant details
+          </p>
+          <p style="color: #525252; font-size: 14px; margin: 0px">
+            Email: info@gomindset.com
+          </p>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-top: 4px;
+            "
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 15 8"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              style="vertical-align: middle; transform: rotate(180deg)"
+              aria-label="Chevron"
+            >
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <g
+                  id="icons-20-2-icon-schevron-down"
+                  transform="translate(7.500000, 4.000000) rotate(-180) translate(-7.500000, -4.000000) translate(-0.000000, 0.000000)"
+                  fill="#8D9096"
+                >
+                  <path
+                    d="M13.927,0.595 C14.2256709,0.9383763 14.1898753,1.45875414 13.847,1.758 L8.055,6.825 C7.92484569,7.12400763 7.61904913,7.30724446 7.294,7.281 C7.04580227,7.29824097 6.80488138,7.19290812 6.649,6.999 C6.60606998,6.94632168 6.56979652,6.88855284 6.541,6.827 L0.747,1.757 C0.413317458,1.46506564 0.37003711,0.96160037 0.649,0.617 C0.779724845,0.455576452 0.970541729,0.354338944 1.17750079,0.336604986 C1.38445985,0.318871028 1.58971829,0.386169538 1.746,0.523 L7.297,5.377 L12.849,0.523 C13.1665715,0.245223748 13.64919,0.277458009 13.927,0.595 L13.927,0.595 Z"
+                    id="Path"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div style="margin-top: 16px">
+          <img
+            src="https://static.cns-icn-prod.a.intuit.com/truste.svg"
+            alt="Trust's online privacy certification"
+          />
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="15"
+              viewBox="0 0 12 10"
+              class="jsx-4037661919"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                transform="translate(1 1)"
+                class="jsx-4037661919"
+              >
+                <rect
+                  width="10.165"
+                  height="9"
+                  y="4"
+                  stroke="#393a3d"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  rx="2"
+                  class="jsx-4037661919"
+                ></rect>
+                <path
+                  stroke="#393a3d"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M8.132 4V2.963C8.132 1.327 6.767 0 5.082 0 3.399 0 2.034 1.327 2.034 2.963V4"
+                  class="jsx-4037661919"
+                ></path>
+                <path
+                  stroke="#393a3d"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M5.083 8v2"
+                  class="jsx-4037661919"
+                ></path>
+                <ellipse
+                  cx="5.083"
+                  cy="8"
+                  fill="#393a3d"
+                  fill-rule="nonzero"
+                  rx="1.017"
+                  ry="1"
+                  class="jsx-4037661919"
+                ></ellipse>
+              </g>
+            </svg>
+            <span style="font-size: 12px; color: #414345"
+              >Information is protected and kept confidential</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
